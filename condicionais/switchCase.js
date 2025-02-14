@@ -58,7 +58,7 @@ switch(operacao){
 
 // Desafio 2 - Switch Case
 
-let idadeU = 62;
+let idadeU = 20;
 
 switch(true){
     case (idadeU >= 0 && idadeU <= 12):
@@ -73,6 +73,8 @@ switch(true){
     case (idadeU > 59):
         console.log("A categoria é Idoso")
         break
+    default:
+        console.log("Valor inválido!")
 }
 
 let valorReal = 10;
