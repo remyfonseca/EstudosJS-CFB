@@ -146,3 +146,66 @@ if(clienteP > 80){
 } else{
     console.log("Pontuação final: " + clienteP + ". Cliente dentro da média");
 }
+
+/* Desafio: Sistema de Níveis de Energia para Atletas
+Você está criando um sistema para calcular o nível de energia de um atleta com base em seu desempenho e descanso. O nível de energia inicial do atleta é 100, e ele pode perder ou ganhar energia conforme as atividades realizadas.
+
+Regras:
+Treinos: O atleta faz três treinos diários, e cada um pode afetar a energia da seguinte forma:
+Se o treino durar mais de 2 horas, a energia diminui em 15% do tempo do treino.
+Se o treino durar entre 1 e 2 horas, a energia diminui em 10% do tempo do treino.
+Se o treino for menor que 1 hora, a energia diminui em 5 pontos fixos.
+Descanso: Se o atleta dormir mais de 7 horas, ele recupera 20 pontos de energia. Caso contrário, ele não recebe bônus de recuperação.
+Avaliação Final: Após os cálculos, determine o nível de energia do atleta:
+Se a energia final for maior que 80, ele está em "Alto Desempenho".
+Se a energia final for menor que 30, ele está "Esgotado".
+Caso contrário, ele está em "Energia Moderada". */
+
+let energiaAtleta = 100;
+
+const treino1 = 3, treino2 = 2.5, treino3 = 1;
+let descanso = 8;
+
+console.log("A energia do atleta total é de: " + energiaAtleta);
+if(treino1 > 2){
+    energiaAtleta -= energiaAtleta * 0.15;
+} else if(treino1 >= 1 && treino1 <=2){
+    energiaAtleta -= energiaAtleta * 0.10;
+} else {
+    energiaAtleta -= 5;
+}
+
+if(treino2 > 2){
+    energiaAtleta -= energiaAtleta * 0.10;
+} else if(treino2 >= 1 && treino2 <=2){
+    energiaAtleta -= energiaAtleta * 0.10;
+} else {
+    energiaAtleta -= 5;
+}
+
+if(treino3 > 2){
+    energiaAtleta -= energiaAtleta * 0.15;
+} else if(treino3 >= 1 && treino3 <=2){
+    energiaAtleta -= energiaAtleta * 0.10;
+} else {
+    energiaAtleta -= 5;
+}
+
+if(descanso >= 8) {
+    console.log("Energia sem descanso: " + energiaAtleta)
+    energiaAtleta += 20;
+
+    console.log("Energia com descanso: " + energiaAtleta)
+} else {
+    console.log("Energia sem descanso: " + energiaAtleta)
+}
+
+let avaliacaoFinal = energiaAtleta;
+
+if(avaliacaoFinal > 80){
+    console.log("A avaliação final do atleta é: " + avaliacaoFinal + ". Com energia total de: " + energiaAtleta + ". O atleta está em Alto Desempenho");
+} else if (avaliacaoFinal < 30){
+    console.log("A avaliação final do atleta é: " + avaliacaoFinal + ". Com energia total de: " + energiaAtleta + ". O atleta está Esgotado");
+} else{
+    console.log("A avaliação final do atleta é: " + avaliacaoFinal + ". Com energia total de: " + energiaAtleta + ". O atleta está com desempenho moderado");
+}
