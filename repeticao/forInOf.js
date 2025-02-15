@@ -52,7 +52,7 @@ let lista2 = [
     {id: 2, name: "Remy2", score: 100}
 ];
 
-for(let x in obj1 && obj2){
+for(let x in lista1 && lista2){
     console.log(lista1[x])
     console.log(lista2[x])
 }
